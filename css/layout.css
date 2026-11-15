@@ -1,0 +1,23 @@
+html, body { margin: 0; }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Raleway", system-ui, sans-serif;
+    background: #f5f8ff;
+}
+*, *::before, *::after { box-sizing: border-box; }
+
+img, video, iframe { max-width: 100%; height: auto; }
+
+site-header,
+site-footer { display: block; }
+
+main {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+}
+
+site-footer { margin-top: auto; }
