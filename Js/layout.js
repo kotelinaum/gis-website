@@ -28,7 +28,7 @@
 
     var NAV = [
         { label: "Почетна", href: "index.html" },
-        { label: "За Нас",   href: "Pages/Video.html" },
+        { label: "Видео",   href: "Pages/Video.html" },
         { label: "Контакт", href: "Pages/Contact.html" },
         { label: "Галерија",href: "Pages/Images.html" }
     ];
@@ -43,11 +43,11 @@
     var FOOTER_TAGLINE = "Направено со страст за географски мапи";
 
     var SOCIAL = [
-        { name: "Instagram", icon: "fa-instagram", url: "#" },
-        { name: "Facebook",  icon: "fa-facebook",  url: "#" },
-        { name: "Twitter",   icon: "fa-twitter",   url: "#" },
-        { name: "LinkedIn",  icon: "fa-linkedin",  url: "#" },
-        { name: "GitHub",    icon: "fa-github",    url: "#" }
+        { name: "Instagram", icon: "fa-instagram", url: "https://www.instagram.com" },
+        { name: "Facebook",  icon: "fa-facebook",  url: "https://www.facebook.com" },
+        { name: "Twitter",   icon: "fa-twitter",   url: "https://twitter.com" },
+        { name: "LinkedIn",  icon: "fa-linkedin",  url: "https://www.linkedin.com/in" },
+        { name: "GitHub",    icon: "fa-github",    url: "https://github.com" }
     ];
 
     // ---- The two components ----
