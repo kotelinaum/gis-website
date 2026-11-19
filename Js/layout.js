@@ -8,6 +8,14 @@
     // Site root, worked out from where this script lives (…/JS/layout.js -> …/)
     var ROOT = new URL("../", document.currentScript.src).href;
 
+    // Makes the page scale properly on phones/tablets (added if the page forgot it)
+    if (!document.querySelector('meta[name="viewport"]')) {
+        var meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content = "width=device-width, initial-scale=1";
+        document.head.appendChild(meta);
+    }
+
     // Styles + fonts + icons, added once so pages don't repeat them
     [
         "https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap",
@@ -78,10 +86,20 @@
                 '<header class="site-header">' +
                 '<div class="site-header__inner">' +
                 '<a class="site-header__logo" href="' + ROOT + 'index.html" aria-label="Почетна">' + logo + "</a>" +
+                '<button class="site-header__toggle" type="button" aria-label="Мени" aria-expanded="false">' +
+                '<i class="fa-solid fa-bars"></i></button>' +
                 '<nav class="site-header__menu" aria-label="Main"><ul class="site-header__nav">' + links + "</ul></nav>" +
                 '<ul class="site-header__langs">' + flags + "</ul>" +
                 "</div>" +
                 "</header>";
+
+            // Hamburger button: opens/closes the menu on small screens
+            var header = this.querySelector(".site-header");
+            var toggle = this.querySelector(".site-header__toggle");
+            toggle.addEventListener("click", function () {
+                var open = header.classList.toggle("is-open");
+                toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            });
         }
     }
 

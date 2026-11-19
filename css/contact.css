@@ -1,8 +1,11 @@
 .page-title {
+    margin: 0;
+    padding: 14px 24px 10px;
     text-align: center;
-    font-weight: normal;
-    padding: 10px 0;
-    border-bottom: 1px solid #b8c4d0;
+    font-size: 32px;
+    font-weight: 500;
+    color: #222;
+    border-bottom: 1px solid #c9ced6;
 }
 
 /* Two columns: form on the left, map on the right */

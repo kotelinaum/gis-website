@@ -13,8 +13,6 @@
 }
 
 .site-header__inner {
-    max-width: 1600px;
-    margin: 0 auto;
     padding: 0 48px;
     min-height: 84px;
     display: flex;
@@ -38,6 +36,18 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 .site-header__logo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Hamburger button: hidden on big screens, shown on small ones (see media query) */
+.site-header__toggle {
+    display: none;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 26px;
+    line-height: 1;
+    padding: 8px 10px;
+    cursor: pointer;
+}
 
 .site-header__nav {
     display: flex;
@@ -65,12 +75,15 @@
 }
 .site-header__langs a { display: block; line-height: 0; }
 .site-header__langs img {
+    width: 36px;
+    height: 26px;
     border-radius: 3px;
     object-fit: cover;
     transition: transform 0.2s;
 }
 .site-header__langs a:hover img { transform: scale(1.1); }
 
+/* ---------- Phones / small windows ---------- */
 @media (max-width: 720px) {
     .site-header__inner {
         flex-wrap: wrap;
@@ -78,7 +91,36 @@
         min-height: 0;
         gap: 10px 14px;
     }
-    .site-header__menu { order: 3; width: 100%; }
-    .site-header__nav { flex-wrap: wrap; gap: 6px 16px; }
-    .site-header__nav a { font-size: 18px; }
+
+    /* Row 1: logo ... flags, hamburger. Row 2: the menu (when opened) */
+    .site-header__logo   { order: 1; }
+    .site-header__langs  { order: 2; }
+    .site-header__toggle { order: 3; display: block; }
+
+    .site-header__menu {
+        order: 4;
+        width: 100%;
+        display: none;
+    }
+    .site-header.is-open .site-header__menu { display: block; }
+
+    .site-header__nav {
+        flex-direction: column;
+        gap: 0;
+    }
+    .site-header__nav a {
+        display: block;
+        padding: 12px 4px;
+        font-size: 18px;
+    }
+
+    .site-header__langs img {
+        width: 28px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .site-header__langs { gap: 8px; }
+    .site-header__langs img { width: 24px; height: 17px }
 }
