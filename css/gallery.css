@@ -1,9 +1,9 @@
 /* ---------- Page title ---------- */
 .page-title {
     margin: 0;
-    padding: 14px 24px 10px;
+    padding: 0.73vw 1.25vw 0.52vw;
     text-align: center;
-    font-size: 32px;
+    font-size: 1.67vw;
     font-weight: 500;
     color: #222;
     border-bottom: 1px solid #c9ced6;
@@ -11,9 +11,8 @@
 
 .page-section {
     width: 100%;
-    max-width: 1800px;
     margin: 0 auto;
-    padding: 32px 24px;
+    padding: 1.67vw 1.25vw;
 }
 
 /* ---------- Carousel ---------- */
@@ -21,7 +20,8 @@
     position: relative;
     overflow: hidden;
     background: #dfe6ef;
-    aspect-ratio: 3 / 1;
+    height: calc(100vh - 14.6vw);
+    min-height: 14.6vw;
     touch-action: pan-y;
 }
 
@@ -49,32 +49,32 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 56px;
-    height: 56px;
+    width: 2.92vw;
+    height: 2.92vw;
     border: 0;
     background: transparent;
     color: rgba(255, 255, 255, 0.75);
-    font-size: 30px;
+    font-size: 1.56vw;
     cursor: pointer;
     transition: color 0.2s, transform 0.2s;
 }
 .carousel__btn:hover,
 .carousel__btn:focus-visible { color: #fff; transform: translateY(-50%) scale(1.15); }
-.carousel__btn--prev { left: 40px; }
-.carousel__btn--next { right: 40px; }
+.carousel__btn--prev { left: 2.08vw; }
+.carousel__btn--next { right: 2.08vw; }
 
 /* Indicator bars */
 .carousel__dots {
     position: absolute;
-    bottom: 18px;
+    bottom: 0.94vw;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 6px;
+    gap: 0.31vw;
 }
 .carousel__dot {
-    width: 38px;
-    height: 3px;
+    width: 1.98vw;
+    height: 0.16vw;
     padding: 0;
     border: 0;
     background: rgba(255, 255, 255, 0.45);
@@ -83,17 +83,18 @@
 }
 .carousel__dot[aria-current="true"] { background: #fff; }
 
-@media (max-width: 720px) {
-    .page-title { font-size: 24px; }
+/* Phones: normal px sizes again */
+@media (max-width: 440px) {
+    .page-title { padding: 14px 24px 10px; font-size: 24px; }
     .page-section { padding: 24px 12px; }
-    .carousel { aspect-ratio: 16 / 10; }
+    .carousel { aspect-ratio: 16 / 10; height: auto; min-height: 0; }
     .carousel__btn { width: 40px; height: 40px; font-size: 22px; }
     .carousel__btn--prev { left: 6px; }
     .carousel__btn--next { right: 6px; }
-    .carousel__dot { width: 24px; }
+    .carousel__dots { bottom: 12px; gap: 6px; }
+    .carousel__dot { width: 24px; height: 3px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .carousel__track { transition: none; }
 }
-

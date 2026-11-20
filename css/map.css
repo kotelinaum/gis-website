@@ -1,0 +1,13 @@
+#viewDiv {
+    width: 100%;
+    height: calc(100vh - 7.5vw - 2px);
+    min-height: 15vw;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    #viewDiv {
+        height: calc(100vh - 230px);
+        min-height: 350px;
+    }
+}
